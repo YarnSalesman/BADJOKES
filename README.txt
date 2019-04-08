@@ -59,9 +59,9 @@ For BLASTBTN, you'll want a compatible Resource Compiler, so you can use MingGW'
 "windres", again if your using GCC. Just include the resulting .o file next to the
 source file on the commandline when compiling:
 
-i686w-w64-mingw32-windres RESOURCE.rc RESOURCE.o
+i686-w64-mingw32-windres RESOURCE.rc RESOURCE.o
 
-i686w-w64-mingw32-gcc -Wall -s -nostartfiles 
+i686-w64-mingw32-gcc -Wall -s -nostartfiles 
                       -municode -mwindows BLASTBTN.c RESOURCE.o 
                       -lwinmm -Wl,--entry=_wmain
 
