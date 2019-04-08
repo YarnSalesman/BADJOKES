@@ -1,14 +1,16 @@
+Reversed the IconDance and Blast Button joke programs you may have seen on this
+lovely channel here: https://www.youtube.com/user/danooct1 
 
+https://www.youtube.com/watch?v=e5Iw3MTQMkw
+https://www.youtube.com/watch?v=16XJBnjzMYU
 
-Welp I've had these for a few months now since reversing some samples I managed to
-get a whiles back. When I first looked at them they were both Delphi binaries, so I
-used the Interactive Delphi Recontructor to help me understand some of the function
-calls. After getting the gist of things, translating the rest of the assembly to C
-was pretty straightforward.
+Found them online and upon first examination I found that they were both Delphi
+binaries, so I used the Interactive Delphi Reconstructor to help me get the gist
+of things. Afterwards, translating the rest of the assembly to C was pretty
+straightforward.
 
-I only wanted to know how the interesting bits worked and not get caught up in 
-little details here and there, so some parts of the originals I changed slightly 
-or left out altogether for being somewhat unecessary.
+As a consequence, some parts of the originals I had to change slightly or leave
+out altogether for being somewhat unecessary.
 
 That being said, these aren't the most accurate interpretations. Performance-wise
 however, I really don't see a difference.
@@ -20,6 +22,13 @@ however, I really don't see a difference.
 
 Before running it, uncheck "Auto arrange icons" and "Align icons to grid" under
 "View" from the desktop context menu. Otherwise the dance will look a little stiff.
+
+The last act will play on until message box is closed.
+
+On first run, the window associated with the icons may get minimized and it will
+look as if nothing is happening (The original did this too). The obvious fix to
+this is to skip it in the Minimize callback function, but laziness got the better
+of me and I left it as is. Just run it again.
 
 
 
@@ -35,7 +44,7 @@ program is running, push this key on your keyboard and it will clean up and exit
 
 
 
-   Compiling
+   Compiling the above two programs
 ///////////////////////////////////////////////////////////////////////////////////
 
 Microsoft's C/C++ Compiler or MinGW's GCC works. Compile as 32-bit.
@@ -57,6 +66,27 @@ i686w-w64-mingw32-gcc -Wall -s -nostartfiles
                       -lwinmm -Wl,--entry=_wmain
 
 
+Some other things I made:
 
+   MOTIONTRAILS.exe
+///////////////////////////////////////////////////////////////////////////////////
+
+An attempt at replicating that crazy cool effect when windows would crash and you
+could drag windows around and see its trail. You know what I'm talking about.
+
+   ORBS.exe
+///////////////////////////////////////////////////////////////////////////////////
+
+I make 5 white orbs orbit randomly around the mouse pointer wherever it goes.
+
+
+The ESCAPE key is registered as a global hotkey. Push it to exit each of the two 
+above programs.
+
+Tested on Windows 10, 8.1, and 7.
+
+
+
+Have fun!
 
 - Yarn
